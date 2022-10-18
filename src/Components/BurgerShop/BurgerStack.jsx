@@ -10,7 +10,6 @@ const BurgerStack = (props) => {
         <Ingredient
           key={idx}
           idx={idx}
-          isList={true}
           ingredient={ingredient}
           removeFromBurger={props.removeFromBurger}
         />
