@@ -1,8 +1,16 @@
+import Ingredient from "./Ingredient"
 
 const IngredientList = (props) => {
 	return (
-		<ul>
-			Use the map function and the Ingredient component here
+		<ul className="burger-stack">
+      {props.ingredients.map((ingredient, idx) =>
+			<Ingredient
+				key={idx}
+				isList={true}
+				addToBurger={props.addToBurger}
+				ingredient={ingredient}
+			/>
+		)}
 		</ul>
 	)
 }
