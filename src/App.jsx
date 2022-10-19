@@ -1,4 +1,4 @@
-import React from 'react'
+import {React, useState} from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './styles/App.css'
 
@@ -7,15 +7,24 @@ import './styles/App.css'
 import Landing from './Components/Landing/Landing'
 import BurgerShop from './Components/BurgerShop/BurgerShop'
 import Nav from './Components/Nav/Nav'
+import SuperMarket from './Components/SuperMarket/SuperMarket'
 
 
 const App = () => {
+  const [cash, setCash] = useState(100)
+  
+  const handleExchange = (amt) => {
+    if (cash - amt < 0) return false
+    setCash((cash - amt).toFixed(2))
+    return true
+  }
   return (
     <main>
-      <Nav />
+      <Nav cash={cash} setCash={setCash} />
       <Routes>
         <Route path='/' element={<Landing />}/>
         <Route path='/burgers' element={<BurgerShop />}/>
+        <Route path='/market' element={<SuperMarket />}/>
       </Routes>
     
     </main>
