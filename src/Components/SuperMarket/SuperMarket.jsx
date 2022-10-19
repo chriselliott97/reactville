@@ -44,7 +44,7 @@ const SuperMarket = (props) => {
       </section>
 
 
-      <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart}/>
+      <Cart cart={cart} setCart={setCart} removeFromCart={removeFromCart} handleExchange={props.handleExchange}/>
     </div>
   )
 }
