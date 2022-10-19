@@ -12,11 +12,11 @@ import SuperMarket from './Components/SuperMarket/SuperMarket'
 
 const App = () => {
   const [cash, setCash] = useState(100)
-  
+
   const handleExchange = (amt) => {
-    if (cash - amt < 0) return false
+    if (cash - amt < 0)
     setCash((cash - amt).toFixed(2))
-    return true
+    
   }
   return (
     <main>
